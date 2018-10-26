@@ -7,12 +7,8 @@
 const path = require('path')
 const slugify = require('slugify')
 
+const load_content = require('./load_blogs')
+
 exports.onCreateNode = ({ node, actions }) => {
-  if (node.internal.type === 'MarkdownRemark') {
-    actions.createNodeField({
-      node,
-      name: 'slug',
-      value: `/blog/${slugify(node.frontmatter.title)}`
-    })
-  }
+  load_content.processBlogs(node, actions);
 }
