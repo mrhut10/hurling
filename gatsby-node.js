@@ -4,4 +4,15 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+const path = require('path')
+const slugify = require('slugify')
+
+exports.onCreateNode = ({ node, actions }) => {
+  if (node.internal.type === 'MarkdownRemark') {
+    actions.createNodeField({
+      node,
+      name: 'slug',
+      value: `/blog/${slugify(node.frontmatter.title)}`
+    })
+  }
+}
