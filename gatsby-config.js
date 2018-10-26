@@ -11,13 +11,31 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      //access my blogs files
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: `${__dirname}/src/content/blogs`,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-katex', //displays math between $$
+          'gatsby-remark-prismjs', // displays code snipits
+        ]
+      }
+    },
+    'gatsby-transformer-json', // can get json data
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'hurlingthings.com',
+        short_name: 'hurlingthings',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
