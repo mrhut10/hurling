@@ -1,8 +1,8 @@
-  #name: git-gateway
-  #branch: master # Branch to update (optional; defaults to master)
+  #name: github
+  #repo: mrhut10/hurling
 backend:
-  name: github
-  repo: mrhut10/hurling
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
 
 publish_mode: editorial_workflow
 
