@@ -44,5 +44,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    'gatsby-plugin-netlify-cms' // cms provider
   ],
 }
