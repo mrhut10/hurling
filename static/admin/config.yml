@@ -15,7 +15,7 @@ collections:
     folder: "src/content/images"
     create: True
     fields:
-      - { label: "name", name: "name", widget: "string"}
+      - { label: "Name", name: "title", widget: "string"}
       - { label: "File", name: "file", widget: "image"}
       - { label: "Short Description", name: "summary", widget: "string"}
       - { label: "Long Description", name: "body", widget: markdown }
